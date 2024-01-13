@@ -1,4 +1,7 @@
 package xyz.leomurca.lmdb
 
-class LMDBApplication {
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class LMDBApplication : Application()

@@ -10,6 +10,7 @@ androidGradlePlugin = "8.2.1"
 kotlin = "1.9.22"
 hiltAndroid = "2.50"
 kotlinxSerializationJson = "1.6.0"
+coil = "2.6.0"
 kotlinxCoroutinesTest = "1.8.0"
 
 [libraries]
@@ -30,6 +31,8 @@ androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espres
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltAndroid" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltAndroid" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 

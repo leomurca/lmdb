@@ -4,6 +4,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import xyz.leomurca.lmdb.BuildConfig
 import xyz.leomurca.lmdb.data.model.Movie
 import xyz.leomurca.lmdb.data.repository.MovieRepository
 import xyz.leomurca.lmdb.di.AppDispatchers.IO
@@ -22,6 +23,7 @@ class FakeMovieRepository @Inject constructor(
                     title = it.title,
                     overview = it.overview,
                     originalLanguage = it.originalLanguage,
+                    posterImagePath = "${BuildConfig.IMAGE_BASE_URL}${it.posterPath}",
                 )
             },
         )

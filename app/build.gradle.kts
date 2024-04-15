@@ -21,6 +21,8 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/w600_and_h900_bestv2\"")
     }
 
     buildTypes {
@@ -38,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.8"
@@ -61,6 +64,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.hilt.android)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.compose)
     kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit)

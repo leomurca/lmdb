@@ -8,4 +8,5 @@ data class NetworkMovie(
     val title: String,
     val overview: String,
     @SerialName("original_language") val originalLanguage: String,
+    @SerialName("poster_path") val posterPath: String,
 )

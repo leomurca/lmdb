@@ -21,7 +21,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navigateToDetails: (movieId: Long) -> Unit) {
+fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), onTapMovie: (movieId: Long) -> Unit) {
     val state = viewModel.uiState.collectAsState()
     when (val value = state.value) {
         is HomeViewModel.UiState.Loaded -> {
@@ -55,7 +55,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navigateToDetails: (m
                             )
                         },
                         modifier = Modifier.clickable {
-                            navigateToDetails.invoke(it.id)
+                            onTapMovie.invoke(it.id)
                         },
                     )
                     HorizontalDivider()

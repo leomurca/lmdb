@@ -1,0 +1,1512 @@
+{
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/eHMh7kChaNeD4VTdMCXLJbRTzcI.jpg",
+      "belongs_to_collection": null,
+      "budget": 165000000,
+      "genres": [
+        {
+          "id": 36,
+          "name": "History"
+        },
+        {
+          "id": 10752,
+          "name": "War"
+        },
+        {
+          "id": 10749,
+          "name": "Romance"
+        }
+      ],
+      "homepage": "https://www.napoleon.movie",
+      "id": 753342,
+      "imdb_id": "tt13287846",
+      "original_language": "en",
+      "original_title": "Napoleon",
+      "overview": "An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.",
+      "popularity": 257.604,
+      "poster_path": "/vcZWJGvB5xydWuUO1vaTLI82tGi.jpg",
+      "production_companies": [
+        {
+          "id": 194232,
+          "logo_path": "/oE7H93u8sy5vvW5EH3fpCp68vvB.png",
+          "name": "Apple Studios",
+          "origin_country": "US"
+        },
+        {
+          "id": 221347,
+          "logo_path": "/6Ry6uNBaa0IbbSs1XYIgX5DkA9r.png",
+          "name": "Scott Free Productions",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-11-22",
+      "revenue": 220597098,
+      "runtime": 158,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "French",
+          "iso_639_1": "fr",
+          "name": "Français"
+        },
+        {
+          "english_name": "German",
+          "iso_639_1": "de",
+          "name": "Deutsch"
+        },
+        {
+          "english_name": "Russian",
+          "iso_639_1": "ru",
+          "name": "Pусский"
+        }
+      ],
+      "status": "Released",
+      "tagline": "He came from nothing. He conquered everything.",
+      "title": "Napoleon",
+      "video": false,
+      "vote_average": 6.482,
+      "vote_count": 1989
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vdpE5pjJVql5aD6pnzRqlFmgxXf.jpg",
+      "belongs_to_collection": null,
+      "budget": 65500000,
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 36,
+          "name": "History"
+        }
+      ],
+      "homepage": "https://www.netflix.com/title/81268316",
+      "id": 906126,
+      "imdb_id": "tt16277242",
+      "original_language": "es",
+      "original_title": "La sociedad de la nieve",
+      "overview": "On October 13, 1972, Uruguayan Air Force Flight 571, chartered to take a rugby team to Chile, crashes into a glacier in the heart of the Andes.",
+      "popularity": 135.044,
+      "poster_path": "/2e853FDVSIso600RqAMunPxiZjq.jpg",
+      "production_companies": [
+        {
+          "id": 207052,
+          "logo_path": null,
+          "name": "El Arriero Films",
+          "origin_country": "ES"
+        },
+        {
+          "id": 217668,
+          "logo_path": null,
+          "name": "Misión de Audaces Films",
+          "origin_country": "ES"
+        },
+        {
+          "id": 178464,
+          "logo_path": "/tyHnxjQJLH6h4iDQKhN5iqebWmX.png",
+          "name": "Netflix",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "ES",
+          "name": "Spain"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-12-15",
+      "revenue": 0,
+      "runtime": 144,
+      "spoken_languages": [
+        {
+          "english_name": "Spanish",
+          "iso_639_1": "es",
+          "name": "Español"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Based on a remarkable true story.",
+      "title": "Society of the Snow",
+      "video": false,
+      "vote_average": 8.07,
+      "vote_count": 2450
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ktHEdqmMWC1wdfPRMRCTZe2OISL.jpg",
+      "belongs_to_collection": {
+        "id": 1211888,
+        "name": "Thanksgiving Collection",
+        "poster_path": "/wKathQJBkDHusQTgwzoAx9HaVMg.jpg",
+        "backdrop_path": "/nOGO5L9HZSLq03uoVGn7JAqkV9g.jpg"
+      },
+      "budget": 15000000,
+      "genres": [
+        {
+          "id": 27,
+          "name": "Horror"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        }
+      ],
+      "homepage": "http://thanksgiving.movie",
+      "id": 1071215,
+      "imdb_id": "tt1448754",
+      "original_language": "en",
+      "original_title": "Thanksgiving",
+      "overview": "After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts - the birthplace of the holiday. Picking off residents one by one, what begins as random revenge killings are soon revealed to be part of a larger, sinister holiday plan.",
+      "popularity": 136.564,
+      "poster_path": "/f5f3TEVst1nHHyqgn7Z3tlwnBIH.jpg",
+      "production_companies": [
+        {
+          "id": 175140,
+          "logo_path": "/grxF2M2ZByxjnzDyvHkfU5Tjr80.png",
+          "name": "Electromagnetic Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 18142,
+          "logo_path": null,
+          "name": "Dragonfly Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 143790,
+          "logo_path": "/wo1smiXdiwwxai2dwJlRiGwE7rS.png",
+          "name": "Spyglass Media Group",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-11-16",
+      "revenue": 46553280,
+      "runtime": 106,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "There will be no leftovers.",
+      "title": "Thanksgiving",
+      "video": false,
+      "vote_average": 6.604,
+      "vote_count": 849
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bckxSN9ueOgm0gJpVJmPQrecWul.jpg",
+      "belongs_to_collection": {
+        "id": 573693,
+        "name": "Aquaman Collection",
+        "poster_path": "/rNQompSTfAG5O2iXSH8Phay4L45.jpg",
+        "backdrop_path": "/5iidzov8DrsSyZdefeo7jBLDNUW.jpg"
+      },
+      "budget": 205000000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 12,
+          "name": "Adventure"
+        },
+        {
+          "id": 14,
+          "name": "Fantasy"
+        }
+      ],
+      "homepage": "https://www.aquamanmovie.com",
+      "id": 572802,
+      "imdb_id": "tt9663764",
+      "original_language": "en",
+      "original_title": "Aquaman and the Lost Kingdom",
+      "overview": "Black Manta seeks revenge on Aquaman for his father's death. Wielding the Black Trident's power, he becomes a formidable foe. To defend Atlantis, Aquaman forges an alliance with his imprisoned brother. They must protect the kingdom.",
+      "popularity": 304.589,
+      "poster_path": "/7lTnXOy0iNtBAdRP3TZvaKJ77F6.jpg",
+      "production_companies": [
+        {
+          "id": 174,
+          "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+          "name": "Warner Bros. Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 11565,
+          "logo_path": "/S74cHHbIrdmb5M51Pft72Uo9Gz.png",
+          "name": "The Safran Company",
+          "origin_country": "US"
+        },
+        {
+          "id": 76907,
+          "logo_path": "/ygMQtjsKX7BZkCQhQZY82lgnCUO.png",
+          "name": "Atomic Monster",
+          "origin_country": "US"
+        },
+        {
+          "id": 128064,
+          "logo_path": "/13F3Jf7EFAcREU0xzZqJnVnyGXu.png",
+          "name": "DC Films",
+          "origin_country": "US"
+        },
+        {
+          "id": 216687,
+          "logo_path": null,
+          "name": "Domain Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-12-20",
+      "revenue": 433285802,
+      "runtime": 124,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Korean",
+          "iso_639_1": "ko",
+          "name": "한국어/조선말"
+        },
+        {
+          "english_name": "Mandarin",
+          "iso_639_1": "zh",
+          "name": "普通话"
+        }
+      ],
+      "status": "Released",
+      "tagline": "The tide is turning.",
+      "title": "Aquaman and the Lost Kingdom",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 2243
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7NRGAtu8E4343NSKwhkgmVRDINw.jpg",
+      "belongs_to_collection": {
+        "id": 1240438,
+        "name": "Five Nights at Freddy's Collection",
+        "poster_path": "/xIBsUIxaZTfQHJL16gBUSCXtcTr.jpg",
+        "backdrop_path": "/pIMwtiwLJ5aRtk7xCywr6h0yhLl.jpg"
+      },
+      "budget": 20000000,
+      "genres": [
+        {
+          "id": 27,
+          "name": "Horror"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        }
+      ],
+      "homepage": "https://www.fivenightsatfreddys.movie",
+      "id": 507089,
+      "imdb_id": "tt4589218",
+      "original_language": "en",
+      "original_title": "Five Nights at Freddy's",
+      "overview": "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
+      "popularity": 186.937,
+      "poster_path": "/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg",
+      "production_companies": [
+        {
+          "id": 3172,
+          "logo_path": "/rzKluDcRkIwHZK2pHsiT667A2Kw.png",
+          "name": "Blumhouse Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 211144,
+          "logo_path": null,
+          "name": "Scott Cawthon Productions",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-10-25",
+      "revenue": 294803785,
+      "runtime": 110,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Can you survive five nights?",
+      "title": "Five Nights at Freddy's",
+      "video": false,
+      "vote_average": 7.653,
+      "vote_count": 3534
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uvqf3e451hBviQiCvPx4lapVOKf.jpg",
+      "belongs_to_collection": null,
+      "budget": 0,
+      "genres": [
+        {
+          "id": 27,
+          "name": "Horror"
+        }
+      ],
+      "homepage": "https://wellgousa.com/films/creature-was-stirring",
+      "id": 1131755,
+      "imdb_id": "tt11050992",
+      "original_language": "en",
+      "original_title": "A Creature Was Stirring",
+      "overview": "A nurse taking care of her daughter's mysterious affliction struggles to hide her secrets when uninvited strangers take shelter in her house during a lethal blizzard.",
+      "popularity": 35.416,
+      "poster_path": "/ikQG3byEFyfwcnF0zmyNtXTmr5v.jpg",
+      "production_companies": [
+        {
+          "id": 135312,
+          "logo_path": "/xDRn1qjK5PnKUS2TVDYedWXHvMI.png",
+          "name": "Skubalon",
+          "origin_country": "US"
+        },
+        {
+          "id": 89269,
+          "logo_path": "/pKWk2XfT9xoHYdGKW1Bac7hFvrz.png",
+          "name": "Paper Street Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 212545,
+          "logo_path": null,
+          "name": "10/09 Films",
+          "origin_country": ""
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-12-08",
+      "revenue": 0,
+      "runtime": 96,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "...and it wasn't a mouse!",
+      "title": "A Creature Was Stirring",
+      "video": false,
+      "vote_average": 5.7,
+      "vote_count": 46
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yyFc8Iclt2jxPmLztbP617xXllT.jpg",
+      "belongs_to_collection": null,
+      "budget": 125000000,
+      "genres": [
+        {
+          "id": 35,
+          "name": "Comedy"
+        },
+        {
+          "id": 10751,
+          "name": "Family"
+        },
+        {
+          "id": 14,
+          "name": "Fantasy"
+        }
+      ],
+      "homepage": "https://www.wonkamovie.com",
+      "id": 787699,
+      "imdb_id": "tt6166392",
+      "original_language": "en",
+      "original_title": "Wonka",
+      "overview": "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.",
+      "popularity": 474.827,
+      "poster_path": "/qhb1qOilapbapxWQn9jtRCMwXJF.jpg",
+      "production_companies": [
+        {
+          "id": 174,
+          "logo_path": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+          "name": "Warner Bros. Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 79,
+          "logo_path": "/at4uYdwAAgNRKhZuuFX8ShKSybw.png",
+          "name": "Village Roadshow Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 214904,
+          "logo_path": "/9S6xSAsUiE1zuKzxayco7fD0p26.png",
+          "name": "The Roald Dahl Story Company",
+          "origin_country": "GB"
+        },
+        {
+          "id": 437,
+          "logo_path": "/nu20mtwbEIhUNnQ5NXVhHsNknZj.png",
+          "name": "Heyday Films",
+          "origin_country": "GB"
+        },
+        {
+          "id": 216687,
+          "logo_path": null,
+          "name": "Domain Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-12-06",
+      "revenue": 632302312,
+      "runtime": 117,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Every good thing in this world started with a dream.",
+      "title": "Wonka",
+      "video": false,
+      "vote_average": 7.203,
+      "vote_count": 2826
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8GnWDLn2AhnmkQ7hlQ9NJUYobSS.jpg",
+      "belongs_to_collection": {
+        "id": 131635,
+        "name": "The Hunger Games Collection",
+        "poster_path": "/n4cKN236lNJpZcPXHTtCuQMvGQs.jpg",
+        "backdrop_path": "/Ipp7cegtub4t0mu7xaKLQkYoGc.jpg"
+      },
+      "budget": 100000000,
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 878,
+          "name": "Science Fiction"
+        },
+        {
+          "id": 28,
+          "name": "Action"
+        }
+      ],
+      "homepage": "https://hungergames.movie/",
+      "id": 695721,
+      "imdb_id": "tt10545296",
+      "original_language": "en",
+      "original_title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "overview": "64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12.",
+      "popularity": 247.879,
+      "poster_path": "/mBaXZ95R2OxueZhvQbcEWy2DqyO.jpg",
+      "production_companies": [
+        {
+          "id": 1632,
+          "logo_path": "/cisLn1YAUuptXVBa0xjq7ST9cH0.png",
+          "name": "Lionsgate",
+          "origin_country": "US"
+        },
+        {
+          "id": 5420,
+          "logo_path": "/dlW4Kh5dNieKNURnymsu57y6fMf.png",
+          "name": "Color Force",
+          "origin_country": "US"
+        },
+        {
+          "id": 161357,
+          "logo_path": "/kQlxsHQKQsDOXmKPZVqEyL827NJ.png",
+          "name": "about:blank",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-11-15",
+      "revenue": 337134868,
+      "runtime": 157,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Everyone hungers for something.",
+      "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "video": false,
+      "vote_average": 7.176,
+      "vote_count": 2086
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dvNrgldueQciabkYmlCnyhmaPoO.jpg",
+      "belongs_to_collection": null,
+      "budget": 0,
+      "genres": [
+        {
+          "id": 27,
+          "name": "Horror"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        },
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        }
+      ],
+      "homepage": "",
+      "id": 899445,
+      "imdb_id": "tt14865406",
+      "original_language": "en",
+      "original_title": "Deep Fear",
+      "overview": "A solo trip aboard a yacht takes a terrifying turn when a woman encounters three drug traffickers clinging to the shattered remains of a boat. They soon force her to dive into shark-infested waters to retrieve kilos of cocaine from the sunken wreck.",
+      "popularity": 137.005,
+      "poster_path": "/ms1omYCnhnO3eDOI88tfiy6SaoX.jpg",
+      "production_companies": [
+        {
+          "id": 164686,
+          "logo_path": "/f4YiwKcpmuNcoHxCUCIWZKABukX.png",
+          "name": "Brilliant Pictures",
+          "origin_country": "GB"
+        },
+        {
+          "id": 189103,
+          "logo_path": "/hu0qcD4k7kfWpdAewqmJSUyZPa7.png",
+          "name": "Ashland Hill Media Finance",
+          "origin_country": "US"
+        },
+        {
+          "id": 117747,
+          "logo_path": "/brD72VA95qgjCtGx0hJEAVUeldW.png",
+          "name": "Media Finance Capital",
+          "origin_country": "GB"
+        },
+        {
+          "id": 9987,
+          "logo_path": "/o5OTKAw7Acl5fTZYPyl8M8D9570.png",
+          "name": "Lipsync Productions",
+          "origin_country": "GB"
+        },
+        {
+          "id": 211553,
+          "logo_path": null,
+          "name": "Dark Shark Film",
+          "origin_country": "GB"
+        },
+        {
+          "id": 104,
+          "logo_path": "/9aotxauvc9685tq9pTcRJszuT06.png",
+          "name": "Canal+",
+          "origin_country": "FR"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "FR",
+          "name": "France"
+        },
+        {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-10-18",
+      "revenue": 0,
+      "runtime": 84,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Dive to survive.",
+      "title": "Deep Fear",
+      "video": false,
+      "vote_average": 5.7,
+      "vote_count": 153
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/r9oTasGQofvkQY5vlUXglneF64Z.jpg",
+      "belongs_to_collection": null,
+      "budget": 0,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 35,
+          "name": "Comedy"
+        }
+      ],
+      "homepage": "https://tv.apple.com/movie/umc.cmc.6o6y3wel2lez2tkdu2cv8dzd1",
+      "id": 1029575,
+      "imdb_id": "tt16431870",
+      "original_language": "en",
+      "original_title": "The Family Plan",
+      "overview": "Dan Morgan is many things: a devoted husband, a loving father, a celebrated car salesman. He's also a former assassin. And when his past catches up to his present, he's forced to take his unsuspecting family on a road trip unlike any other.",
+      "popularity": 290.36,
+      "poster_path": "/jLLtx3nTRSLGPAKl4RoIv1FbEBr.jpg",
+      "production_companies": [
+        {
+          "id": 169668,
+          "logo_path": null,
+          "name": "Municipal Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 82819,
+          "logo_path": "/gXfFl9pRPaoaq14jybEn1pHeldr.png",
+          "name": "Skydance Media",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-12-14",
+      "revenue": 0,
+      "runtime": 119,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "French",
+          "iso_639_1": "fr",
+          "name": "Français"
+        }
+      ],
+      "status": "Released",
+      "tagline": "A thrilling road trip comedy.",
+      "title": "The Family Plan",
+      "video": false,
+      "vote_average": 7.321,
+      "vote_count": 1120
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nb3xI8XI3w4pMVZ38VijbsyBqP4.jpg",
+      "belongs_to_collection": null,
+      "budget": 100000000,
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 36,
+          "name": "History"
+        }
+      ],
+      "homepage": "http://www.oppenheimermovie.com",
+      "id": 872585,
+      "imdb_id": "tt15398776",
+      "original_language": "en",
+      "original_title": "Oppenheimer",
+      "overview": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
+      "popularity": 492.863,
+      "poster_path": "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+      "production_companies": [
+        {
+          "id": 9996,
+          "logo_path": "/3tvBqYsBhxWeHlu62SIJ1el93O7.png",
+          "name": "Syncopy",
+          "origin_country": "GB"
+        },
+        {
+          "id": 33,
+          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+          "name": "Universal Pictures",
+          "origin_country": "US"
+        },
+        {
+          "id": 507,
+          "logo_path": "/aRmHe6GWxYMRCQljF75rn2B9Gv8.png",
+          "name": "Atlas Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-07-19",
+      "revenue": 952000000,
+      "runtime": 181,
+      "spoken_languages": [
+        {
+          "english_name": "Dutch",
+          "iso_639_1": "nl",
+          "name": "Nederlands"
+        },
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "The world forever changes.",
+      "title": "Oppenheimer",
+      "video": false,
+      "vote_average": 8.111,
+      "vote_count": 7643
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8fnYJPoXxwAN4valDLgz2whMGTH.jpg",
+      "belongs_to_collection": {
+        "id": 9888,
+        "name": "Home Alone Collection",
+        "poster_path": "/zYPsleQJo1n1rBPlecJBRb3iwSO.jpg",
+        "backdrop_path": "/tpmfRWL1ecFxFOOeqvp6hDf41ac.jpg"
+      },
+      "budget": 18000000,
+      "genres": [
+        {
+          "id": 35,
+          "name": "Comedy"
+        },
+        {
+          "id": 10751,
+          "name": "Family"
+        },
+        {
+          "id": 12,
+          "name": "Adventure"
+        }
+      ],
+      "homepage": "",
+      "id": 772,
+      "imdb_id": "tt0104431",
+      "original_language": "en",
+      "original_title": "Home Alone 2: Lost in New York",
+      "overview": "Instead of flying to Florida with his folks, Kevin ends up alone in New York, where he gets a hotel room with his dad's credit card—despite problems from a clerk and meddling bellboy. But when Kevin runs into his old nemeses, the Wet Bandits, he's determined to foil their plans to rob a toy store on Christmas Eve.",
+      "popularity": 93.398,
+      "poster_path": "/uuitWHpJwxD1wruFl2nZHIb4UGN.jpg",
+      "production_companies": [
+        {
+          "id": 25,
+          "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
+          "name": "20th Century Fox",
+          "origin_country": "US"
+        },
+        {
+          "id": 477,
+          "logo_path": null,
+          "name": "Hughes Entertainment",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "1992-11-15",
+      "revenue": 358994850,
+      "runtime": 120,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "French",
+          "iso_639_1": "fr",
+          "name": "Français"
+        }
+      ],
+      "status": "Released",
+      "tagline": "He's up past his bedtime in the city that never sleeps.",
+      "title": "Home Alone 2: Lost in New York",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 9210
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sRLC052ieEzkQs9dEtPMfFxYkej.jpg",
+      "belongs_to_collection": {
+        "id": 934765,
+        "name": "Rebel Moon Collection",
+        "poster_path": "/17fiEIxD7ClGW33IdxpRb0mdXgF.jpg",
+        "backdrop_path": "/tCo96jmjKEMoWa5eCZNNss3MtMH.jpg"
+      },
+      "budget": 83000000,
+      "genres": [
+        {
+          "id": 878,
+          "name": "Science Fiction"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 28,
+          "name": "Action"
+        }
+      ],
+      "homepage": "https://www.rebelmoon70mm.com",
+      "id": 848326,
+      "imdb_id": "tt14998742",
+      "original_language": "en",
+      "original_title": "Rebel Moon - Part One: A Child of Fire",
+      "overview": "When a peaceful colony on the edge of the galaxy finds itself threatened by the armies of the tyrannical Regent Balisarius, they dispatch Kora, a young woman with a mysterious past, to seek out warriors from neighboring planets to help them take a stand.",
+      "popularity": 212.454,
+      "poster_path": "/ui4DrH1cKk2vkHshcUcGt2lKxCm.jpg",
+      "production_companies": [
+        {
+          "id": 114152,
+          "logo_path": null,
+          "name": "The Stone Quarry",
+          "origin_country": "US"
+        },
+        {
+          "id": 156880,
+          "logo_path": null,
+          "name": "Grand Electric",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-12-15",
+      "revenue": 0,
+      "runtime": 134,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "There are no heroes. Only rebels.",
+      "title": "Rebel Moon - Part One: A Child of Fire",
+      "video": false,
+      "vote_average": 6.361,
+      "vote_count": 1642
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/auXrHU6O17n9Tz11SHReoorjrU6.jpg",
+      "belongs_to_collection": {
+        "id": 1235977,
+        "name": "Leo - Collection",
+        "poster_path": "/m3A3nvOddwkenc6Laxs4WS1UTo1.jpg",
+        "backdrop_path": "/hAApf7lgk4QCK5aMN2Swq7U7hRf.jpg"
+      },
+      "budget": 0,
+      "genres": [
+        {
+          "id": 16,
+          "name": "Animation"
+        },
+        {
+          "id": 35,
+          "name": "Comedy"
+        },
+        {
+          "id": 10751,
+          "name": "Family"
+        }
+      ],
+      "homepage": "https://www.netflix.com/title/81218917",
+      "id": 1075794,
+      "imdb_id": "tt5755238",
+      "original_language": "en",
+      "original_title": "Leo",
+      "overview": "Jaded 74-year-old lizard Leo has been stuck in the same Florida classroom for decades with his terrarium-mate turtle. When he learns he only has one year left to live, he plans to escape to experience life on the outside but instead gets caught up in the problems of his anxious students — including an impossibly mean substitute teacher.",
+      "popularity": 181.159,
+      "poster_path": "/pD6sL4vntUOXHmuvJPPZAgvyfd9.jpg",
+      "production_companies": [
+        {
+          "id": 878,
+          "logo_path": "/e2AZdsQdkhN0qJhoN4TMYiVPLyb.png",
+          "name": "Happy Madison Productions",
+          "origin_country": "US"
+        },
+        {
+          "id": 8089,
+          "logo_path": "/kEUAzsG2hZcCV7rmSCozgLhGWaa.png",
+          "name": "Animal Logic",
+          "origin_country": "AU"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "AU",
+          "name": "Australia"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-11-17",
+      "revenue": 0,
+      "runtime": 102,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Breaking out this November.",
+      "title": "Leo",
+      "video": false,
+      "vote_average": 7.49,
+      "vote_count": 1036
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4MCKNAc6AbWjEsM2h9Xc29owo4z.jpg",
+      "belongs_to_collection": null,
+      "budget": 35000000,
+      "genres": [
+        {
+          "id": 28,
+          "name": "Action"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        },
+        {
+          "id": 18,
+          "name": "Drama"
+        }
+      ],
+      "homepage": "https://www.mgm.com/movies/the-beekeeper",
+      "id": 866398,
+      "imdb_id": "tt15314262",
+      "original_language": "en",
+      "original_title": "The Beekeeper",
+      "overview": "One man's campaign for vengeance takes on national stakes after he is revealed to be a former operative of a powerful and clandestine organization known as Beekeepers.",
+      "popularity": 370.649,
+      "poster_path": "/A7EByudX0eOzlkQ2FIbogzyazm2.jpg",
+      "production_companies": [
+        {
+          "id": 14,
+          "logo_path": "/m6AHu84oZQxvq7n1rsvMNJIAsMu.png",
+          "name": "Miramax",
+          "origin_country": "US"
+        },
+        {
+          "id": 118475,
+          "logo_path": null,
+          "name": "Cedar Park Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 218150,
+          "logo_path": null,
+          "name": "Punch Palace Productions",
+          "origin_country": "GB"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2024-01-08",
+      "revenue": 151417661,
+      "runtime": 105,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Expose the corruption. Protect the hive.",
+      "title": "The Beekeeper",
+      "video": false,
+      "vote_average": 7.477,
+      "vote_count": 1999
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zMtBbNhROxPf0urHSBoZUnqJEwT.jpg",
+      "belongs_to_collection": {
+        "id": 489724,
+        "name": "The Trolls Collection",
+        "poster_path": "/i4aII37O184x7K3dC7fpF9CAfS4.jpg",
+        "backdrop_path": "/xtgonS6wcxK5RfnWWohYZF3mhjM.jpg"
+      },
+      "budget": 95000000,
+      "genres": [
+        {
+          "id": 16,
+          "name": "Animation"
+        },
+        {
+          "id": 10751,
+          "name": "Family"
+        },
+        {
+          "id": 10402,
+          "name": "Music"
+        },
+        {
+          "id": 14,
+          "name": "Fantasy"
+        },
+        {
+          "id": 35,
+          "name": "Comedy"
+        }
+      ],
+      "homepage": "https://www.dreamworks.com/movies/trolls-band-together",
+      "id": 901362,
+      "imdb_id": "tt14362112",
+      "original_language": "en",
+      "original_title": "Trolls Band Together",
+      "overview": "When Branch's brother, Floyd, is kidnapped for his musical talents by a pair of nefarious pop-star villains, Branch and Poppy embark on a harrowing and emotional journey to reunite the other brothers and rescue Floyd from a fate even worse than pop-culture obscurity.",
+      "popularity": 196.082,
+      "poster_path": "/bkpPTZUdq31UGDovmszsg2CchiI.jpg",
+      "production_companies": [
+        {
+          "id": 521,
+          "logo_path": "/kP7t6RwGz2AvvTkvnI1uteEwHet.png",
+          "name": "DreamWorks Animation",
+          "origin_country": "US"
+        },
+        {
+          "id": 1778,
+          "logo_path": "/b5rT6VbYza3LyfltCmz1OcqzWJM.png",
+          "name": "dentsu",
+          "origin_country": "JP"
+        },
+        {
+          "id": 33,
+          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+          "name": "Universal Pictures",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-10-12",
+      "revenue": 207318137,
+      "runtime": 91,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "There are some new trolls on the block.",
+      "title": "Trolls Band Together",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 735
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/15BnuDQ8pYRmLqPZKAk5vIhUu9J.jpg",
+      "belongs_to_collection": null,
+      "budget": 0,
+      "genres": [
+        {
+          "id": 37,
+          "name": "Western"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        },
+        {
+          "id": 28,
+          "name": "Action"
+        }
+      ],
+      "homepage": "",
+      "id": 843380,
+      "imdb_id": "tt14895206",
+      "original_language": "en",
+      "original_title": "Dead for a Dollar",
+      "overview": "In 1897, veteran bounty hunter Max Borlund is deep into Mexico where he encounters professional gambler and outlaw Joe Cribbens — a sworn enemy he sent to prison years before. Max is on a mission to find and return Rachel Kidd, the wife of a wealthy businessman, who as the story is told to Max, has been abducted by Buffalo Soldier Elijah Jones. Max is ultimately faced with a showdown to save honor.",
+      "popularity": 149.952,
+      "poster_path": "/1AnXfjxFqMsQmUPSvt9YxUJhfFw.jpg",
+      "production_companies": [
+        {
+          "id": 2749,
+          "logo_path": "/v0FPNUoPunRWFCDgfCTt3y8RKPs.png",
+          "name": "Chaos, a Film Company",
+          "origin_country": "CA"
+        },
+        {
+          "id": 90101,
+          "logo_path": null,
+          "name": "Polaris Pictures",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "CA",
+          "name": "Canada"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2022-09-30",
+      "revenue": 81403,
+      "runtime": 106,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        },
+        {
+          "english_name": "Portuguese",
+          "iso_639_1": "pt",
+          "name": "Português"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Vengeance for the right price.",
+      "title": "Dead for a Dollar",
+      "video": false,
+      "vote_average": 5.8,
+      "vote_count": 226
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hNuAbtP43awvook9Z8OVopUF789.jpg",
+      "belongs_to_collection": {
+        "id": 607112,
+        "name": "Hell House LLC Collection",
+        "poster_path": "/i2asszAuJlGyy7XSMadETGdMLB0.jpg",
+        "backdrop_path": "/8gB33KsBBxfaBBzrbWtm79ygbp1.jpg"
+      },
+      "budget": 0,
+      "genres": [
+        {
+          "id": 27,
+          "name": "Horror"
+        },
+        {
+          "id": 9648,
+          "name": "Mystery"
+        }
+      ],
+      "homepage": "",
+      "id": 1035982,
+      "imdb_id": "tt22796890",
+      "original_language": "en",
+      "original_title": "Hell House LLC Origins: The Carmichael Manor",
+      "overview": "A group of cold case investigators stay at the Carmichael Manor, site of the grisly and unsolved murders of the Carmichael family back in the eighties. After four nights, the group was never heard from again. What is discovered on their footage is even more disturbing than anything found on the Hell House tapes.",
+      "popularity": 54.783,
+      "poster_path": "/9YlsIwWATGwT6LL5UZVF5xoBTcC.jpg",
+      "production_companies": [
+        {
+          "id": 62981,
+          "logo_path": null,
+          "name": "Cognetti Films",
+          "origin_country": ""
+        },
+        {
+          "id": 209454,
+          "logo_path": null,
+          "name": "Marlyous' Boys",
+          "origin_country": ""
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-10-24",
+      "revenue": 0,
+      "runtime": 98,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Every story has an origin.",
+      "title": "Hell House LLC Origins: The Carmichael Manor",
+      "video": false,
+      "vote_average": 6.4,
+      "vote_count": 82
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fK713wZLlMO4HQGiUJSHLzxg2qJ.jpg",
+      "belongs_to_collection": null,
+      "budget": 20000000,
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 35,
+          "name": "Comedy"
+        },
+        {
+          "id": 53,
+          "name": "Thriller"
+        }
+      ],
+      "homepage": "https://www.saltburnfilm.com",
+      "id": 930564,
+      "imdb_id": "tt17351924",
+      "original_language": "en",
+      "original_title": "Saltburn",
+      "overview": "Struggling to find his place at Oxford University, student Oliver Quick finds himself drawn into the world of the charming and aristocratic Felix Catton, who invites him to Saltburn, his eccentric family's sprawling estate, for a summer never to be forgotten.",
+      "popularity": 66.594,
+      "poster_path": "/qjhahNLSZ705B5JP92YMEYPocPz.jpg",
+      "production_companies": [
+        {
+          "id": 82968,
+          "logo_path": "/gRROMOG5bpF6TIDMbfaa5gnFFzl.png",
+          "name": "LuckyChap Entertainment",
+          "origin_country": "US"
+        },
+        {
+          "id": 2531,
+          "logo_path": "/9MfCJ2G6Nrf9yyRj4tAgPmMiDcn.png",
+          "name": "MRC",
+          "origin_country": "US"
+        },
+        {
+          "id": 207685,
+          "logo_path": null,
+          "name": "Lie Still",
+          "origin_country": "GB"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-11-16",
+      "revenue": 21013738,
+      "runtime": 131,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "We're all about to lose our minds.",
+      "title": "Saltburn",
+      "video": false,
+      "vote_average": 7.064,
+      "vote_count": 1904
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/50stq3Jlny6oEgJjsXbQvbajCNw.jpg",
+      "belongs_to_collection": null,
+      "budget": 20000000,
+      "genres": [
+        {
+          "id": 18,
+          "name": "Drama"
+        },
+        {
+          "id": 10749,
+          "name": "Romance"
+        },
+        {
+          "id": 10402,
+          "name": "Music"
+        }
+      ],
+      "homepage": "http://a24films.com/films/priscilla",
+      "id": 1020006,
+      "imdb_id": "tt22041854",
+      "original_language": "en",
+      "original_title": "Priscilla",
+      "overview": "When teenage Priscilla Beaulieu meets Elvis Presley at a party, the man who is already a meteoric rock-and-roll superstar becomes someone entirely unexpected in private moments: a thrilling crush, an ally in loneliness, a vulnerable best friend.",
+      "popularity": 67.878,
+      "poster_path": "/kRGMnxFQodcKCDo1xK3bIAi4zfV.jpg",
+      "production_companies": [
+        {
+          "id": 70,
+          "logo_path": "/ueaENQkPcy8rlr5fGZVBXKOhlBh.png",
+          "name": "American Zoetrope",
+          "origin_country": "US"
+        },
+        {
+          "id": 128344,
+          "logo_path": "/zNBa6RAZ5TKWZUEhxx6sxc9tdrr.png",
+          "name": "The Apartment Pictures",
+          "origin_country": "IT"
+        },
+        {
+          "id": 121813,
+          "logo_path": "/7OwtRpQAFKU3KWA7InBg3h3PxqI.png",
+          "name": "Fremantle",
+          "origin_country": "US"
+        }
+      ],
+      "production_countries": [
+        {
+          "iso_3166_1": "IT",
+          "name": "Italy"
+        },
+        {
+          "iso_3166_1": "US",
+          "name": "United States of America"
+        }
+      ],
+      "release_date": "2023-10-27",
+      "revenue": 30140906,
+      "runtime": 110,
+      "spoken_languages": [
+        {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+        }
+      ],
+      "status": "Released",
+      "tagline": "Wife to the king. Icon to the world. Destined for more.",
+      "title": "Priscilla",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 534
+    }
+  ]
+}

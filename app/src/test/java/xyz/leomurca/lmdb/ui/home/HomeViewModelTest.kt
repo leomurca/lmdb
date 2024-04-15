@@ -48,12 +48,14 @@ class HomeViewModelTest {
 
     private val sampleMovies = listOf(
         Movie(
+            id = 753342,
             title = "Napoleon",
             overview = "An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.",
             originalLanguage = "en",
             posterImagePath = "image_url",
         ),
         Movie(
+            id = 906126,
             title = "La sociedad de la nieve",
             overview = "On October 13, 1972, Uruguayan Air Force Flight 571, chartered to take a rugby team to Chile, crashes into a glacier in the heart of the Andes.",
             originalLanguage = "es",

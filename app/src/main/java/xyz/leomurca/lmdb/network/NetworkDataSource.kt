@@ -1,7 +1,9 @@
 package xyz.leomurca.lmdb.network
 
+import xyz.leomurca.lmdb.network.model.NetworkDetails
 import xyz.leomurca.lmdb.network.model.NetworkMovieResponse
 
 interface NetworkDataSource {
-    suspend fun getPopularMovies(): NetworkMovieResponse
+    suspend fun popularMovies(): NetworkMovieResponse
+    suspend fun details(id: Long): NetworkDetails
 }

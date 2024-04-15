@@ -9,7 +9,10 @@ import xyz.leomurca.lmdb.JvmUnitTestFakeAssetManager
 import xyz.leomurca.lmdb.di.AppDispatchers.IO
 import xyz.leomurca.lmdb.di.Dispatcher
 import xyz.leomurca.lmdb.network.NetworkDataSource
+import xyz.leomurca.lmdb.network.model.NetworkDetails
+import xyz.leomurca.lmdb.network.model.NetworkDetailsResponse
 import xyz.leomurca.lmdb.network.model.NetworkMovieResponse
+import java.io.InputStream
 import javax.inject.Inject
 
 class FakeNetworkDataSource @Inject constructor(
@@ -19,12 +22,23 @@ class FakeNetworkDataSource @Inject constructor(
 ) : NetworkDataSource {
 
     @OptIn(ExperimentalSerializationApi::class)
-    override suspend fun getPopularMovies(): NetworkMovieResponse =
+    override suspend fun popularMovies(): NetworkMovieResponse =
         withContext(ioDispatcher) {
             assets.open(POPULAR_MOVIES_ASSET).use(networkJson::decodeFromStream)
         }
 
+    @OptIn(ExperimentalSerializationApi::class)
+    override suspend fun details(id: Long): NetworkDetails =
+        withContext(ioDispatcher) {
+            assets.open(DETAILS_ASSET).use<InputStream, NetworkDetailsResponse>(networkJson::decodeFromStream).firstBy(id)!!
+        }
+
+    private fun NetworkDetailsResponse.firstBy(id: Long): NetworkDetails? {
+        return results.firstOrNull { it.id == id }
+    }
+
     companion object {
         private const val POPULAR_MOVIES_ASSET = "popular-movies.json"
+        private const val DETAILS_ASSET = "movie-details.json"
     }
 }

@@ -22,7 +22,7 @@ android {
             useSupportLibrary = true
         }
 
-        buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/w600_and_h900_bestv2\"")
+        buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p\"")
     }
 
     buildTypes {
@@ -62,6 +62,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtimeKtx)
     implementation(libs.androidx.lifecycle.viewModelCompose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hilt.android)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.coil.kt)

@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class NetworkMovie(
+    val id: Long,
     val title: String,
     val overview: String,
     @SerialName("original_language") val originalLanguage: String,

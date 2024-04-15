@@ -1,5 +1,6 @@
 package xyz.leomurca.lmdb.ui.home
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -16,10 +17,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel) {
+fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), navigateToDetails: (movieId: Long) -> Unit) {
     val state = viewModel.uiState.collectAsState()
     when (val value = state.value) {
         is HomeViewModel.UiState.Loaded -> {
@@ -51,6 +53,9 @@ fun HomeScreen(viewModel: HomeViewModel) {
                                 contentDescription = it.title,
                                 modifier = Modifier.height(200.dp),
                             )
+                        },
+                        modifier = Modifier.clickable {
+                            navigateToDetails.invoke(it.id)
                         },
                     )
                     HorizontalDivider()

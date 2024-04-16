@@ -27,8 +27,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import xyz.leomurca.lmdb.ui.theme.gradientBlackToTransparent
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 @Composable
 fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel()) {
@@ -44,7 +42,8 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel()) {
                     AsyncImage(
                         model = value.details.backdropImagePath,
                         contentDescription = value.details.title,
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier
+                            .fillMaxWidth()
                             .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
                             .drawWithContent {
                                 drawContent()
@@ -72,7 +71,7 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel()) {
                                 fontSize = TextUnit(20F, TextUnitType.Sp),
                             )
                             Text(
-                                text = LocalDate.parse(value.details.releaseDate).format(DateTimeFormatter.ofPattern("yyyy")), // TODO: Extract to a separate place
+                                text = value.details.releaseDate,
                                 fontSize = TextUnit(12F, TextUnitType.Sp),
                             )
                         }

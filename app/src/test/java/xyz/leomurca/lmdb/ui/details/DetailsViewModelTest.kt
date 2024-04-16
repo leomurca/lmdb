@@ -54,6 +54,7 @@ class DetailsViewModelTest {
         title = "Napoleon",
         overview = "An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.",
         backdropImagePath = "image_url",
+        posterImagePath = "image_url",
         releaseDate = "2023-11-22",
         budget = 165000000F,
         revenue = 220597098F,

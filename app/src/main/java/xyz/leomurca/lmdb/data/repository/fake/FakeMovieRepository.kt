@@ -38,6 +38,7 @@ class FakeMovieRepository @Inject constructor(
                 title = details.originalTitle,
                 overview = details.overview,
                 backdropImagePath = "${BuildConfig.IMAGE_BASE_URL}$BACKDROP_IMAGE_DIMENSIONS${details.backdropImagePath}",
+                posterImagePath = "${BuildConfig.IMAGE_BASE_URL}$POSTER_IMAGE_DIMENSIONS${details.posterImagePath}",
                 releaseDate = details.releaseDate,
                 budget = details.budget,
                 revenue = details.revenue,

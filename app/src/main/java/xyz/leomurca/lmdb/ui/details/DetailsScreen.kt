@@ -1,6 +1,5 @@
 package xyz.leomurca.lmdb.ui.details
 
-import android.icu.text.NumberFormat
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -10,6 +9,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.PlayArrow
+import androidx.compose.material3.ExtendedFloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -34,81 +38,98 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel()) {
     val state = viewModel.uiState.collectAsState()
     when (val value = state.value) {
         is DetailsViewModel.UiState.Loaded -> {
-            Column {
-                Box(
-                    Modifier
-                        .fillMaxWidth()
-                        .height(350.dp),
-                ) {
-                    AsyncImage(
-                        model = value.details.backdropImagePath,
-                        contentDescription = value.details.title,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
-                            .drawWithContent {
-                                drawContent()
-                                drawRect(
-                                    brush = Brush.verticalGradient(gradientBlackToTransparent),
-                                    blendMode = BlendMode.DstIn,
-                                )
-                            },
+            Scaffold(
+                floatingActionButton = {
+                    ExtendedFloatingActionButton(
+                        text = { Text(text = "Play trailer", color = Color.White) },
+                        icon = {
+                            Icon(
+                                imageVector = Icons.Rounded.PlayArrow,
+                                contentDescription = "Play trailer",
+                                tint = Color.White,
+                            )
+                        },
+                        onClick = { },
+                        containerColor = Color.Black
                     )
-
-                    Row(Modifier.offset(10.dp, 170.dp)) {
+                }
+            ) { paddingValues ->
+                Column(Modifier.padding(paddingValues)) {
+                    Box(
+                        Modifier
+                            .fillMaxWidth()
+                            .height(350.dp),
+                    ) {
                         AsyncImage(
-                            model = value.details.posterImagePath,
+                            model = value.details.backdropImagePath,
                             contentDescription = value.details.title,
                             modifier = Modifier
-                                .height(150.dp)
-                                .border(BorderStroke(2.dp, Color.Black)),
+                                .fillMaxWidth()
+                                .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
+                                .drawWithContent {
+                                    drawContent()
+                                    drawRect(
+                                        brush = Brush.verticalGradient(gradientBlackToTransparent),
+                                        blendMode = BlendMode.DstIn,
+                                    )
+                                },
                         )
-                        Column(modifier = Modifier.padding(vertical = 30.dp, horizontal = 10.dp)) {
-                            Text(
-                                text = value.details.title,
-                                maxLines = 2,
-                                overflow = TextOverflow.Ellipsis,
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = TextUnit(20F, TextUnitType.Sp),
+
+                        Row(Modifier.offset(10.dp, 170.dp)) {
+                            AsyncImage(
+                                model = value.details.posterImagePath,
+                                contentDescription = value.details.title,
+                                modifier = Modifier
+                                    .height(150.dp)
+                                    .border(BorderStroke(2.dp, Color.Black)),
                             )
-                            Text(
-                                text = value.details.releaseDate,
-                                fontSize = TextUnit(12F, TextUnitType.Sp),
-                            )
+                            Column(modifier = Modifier.padding(vertical = 30.dp, horizontal = 10.dp)) {
+                                Text(
+                                    text = value.details.title,
+                                    maxLines = 2,
+                                    overflow = TextOverflow.Ellipsis,
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = TextUnit(20F, TextUnitType.Sp),
+                                )
+                                Text(
+                                    text = value.details.releaseDate,
+                                    fontSize = TextUnit(12F, TextUnitType.Sp),
+                                )
+                            }
                         }
                     }
-                }
-                Column(Modifier.padding(horizontal = 10.dp)) {
-                    Text(
-                        text = "Overview",
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = TextUnit(16F, TextUnitType.Sp),
-                    )
-                    Text(
-                        text = value.details.overview,
-                        fontSize = TextUnit(12F, TextUnitType.Sp),
-                    )
-                    Text(
-                        text = "Budget",
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = TextUnit(16F, TextUnitType.Sp),
-                        modifier = Modifier.padding(top = 10.dp)
-                    )
-                    Text(
-                        text = value.details.budget,
-                        fontSize = TextUnit(12F, TextUnitType.Sp),
-                    )
+                    Column(Modifier.padding(horizontal = 10.dp)) {
+                        Text(
+                            text = "Overview",
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = TextUnit(16F, TextUnitType.Sp),
+                        )
+                        Text(
+                            text = value.details.overview,
+                            fontSize = TextUnit(12F, TextUnitType.Sp),
+                        )
+                        Text(
+                            text = "Budget",
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = TextUnit(16F, TextUnitType.Sp),
+                            modifier = Modifier.padding(top = 10.dp)
+                        )
+                        Text(
+                            text = value.details.budget,
+                            fontSize = TextUnit(12F, TextUnitType.Sp),
+                        )
 
-                    Text(
-                        text = "Revenue",
-                        fontWeight = FontWeight.SemiBold,
-                        fontSize = TextUnit(16F, TextUnitType.Sp),
-                        modifier = Modifier.padding(top = 10.dp)
-                    )
-                    Text(
-                        text = value.details.revenue,
-                        fontSize = TextUnit(12F, TextUnitType.Sp),
-                    )
+                        Text(
+                            text = "Revenue",
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = TextUnit(16F, TextUnitType.Sp),
+                            modifier = Modifier.padding(top = 10.dp)
+                        )
+                        Text(
+                            text = value.details.revenue,
+                            fontSize = TextUnit(12F, TextUnitType.Sp),
+                        )
+                    }
                 }
             }
         }

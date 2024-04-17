@@ -19,6 +19,5 @@ class SystemDateFormatterTest {
 
         // Assert
         assertEquals("2023", result)
-
     }
 }

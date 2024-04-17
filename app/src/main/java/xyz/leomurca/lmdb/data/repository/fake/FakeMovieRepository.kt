@@ -13,12 +13,14 @@ import xyz.leomurca.lmdb.di.Dispatcher
 import xyz.leomurca.lmdb.network.fake.FakeNetworkDataSource
 import xyz.leomurca.lmdb.utils.DateFormatter
 import xyz.leomurca.lmdb.utils.DatePattern
+import xyz.leomurca.lmdb.utils.NumberFormatter
 import javax.inject.Inject
 
 class FakeMovieRepository @Inject constructor(
     @Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,
     private val dataSource: FakeNetworkDataSource,
     private val dateFormatter: DateFormatter,
+    private val numberFormatter: NumberFormatter,
 ) : MovieRepository {
     override fun popularMovies(): Flow<List<Movie>> = flow {
         emit(
@@ -43,8 +45,8 @@ class FakeMovieRepository @Inject constructor(
                 backdropImagePath = "${BuildConfig.IMAGE_BASE_URL}$BACKDROP_IMAGE_DIMENSIONS${details.backdropImagePath}",
                 posterImagePath = "${BuildConfig.IMAGE_BASE_URL}$POSTER_IMAGE_DIMENSIONS${details.posterImagePath}",
                 releaseDate = dateFormatter.dateStringToPattern(details.releaseDate, DatePattern.yyyy),
-                budget = details.budget,
-                revenue = details.revenue,
+                budget = numberFormatter.usdCurrency(details.budget),
+                revenue = numberFormatter.usdCurrency(details.revenue),
             ),
         )
     }

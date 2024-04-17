@@ -1,5 +1,6 @@
 package xyz.leomurca.lmdb.ui.details
 
+import android.icu.text.NumberFormat
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -79,7 +80,33 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel()) {
                 }
                 Column(Modifier.padding(horizontal = 10.dp)) {
                     Text(
+                        text = "Overview",
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = TextUnit(16F, TextUnitType.Sp),
+                    )
+                    Text(
                         text = value.details.overview,
+                        fontSize = TextUnit(12F, TextUnitType.Sp),
+                    )
+                    Text(
+                        text = "Budget",
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = TextUnit(16F, TextUnitType.Sp),
+                        modifier = Modifier.padding(top = 10.dp)
+                    )
+                    Text(
+                        text = value.details.budget,
+                        fontSize = TextUnit(12F, TextUnitType.Sp),
+                    )
+
+                    Text(
+                        text = "Revenue",
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = TextUnit(16F, TextUnitType.Sp),
+                        modifier = Modifier.padding(top = 10.dp)
+                    )
+                    Text(
+                        text = value.details.revenue,
                         fontSize = TextUnit(12F, TextUnitType.Sp),
                     )
                 }

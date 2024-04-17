@@ -56,8 +56,7 @@ class DetailsViewModelTest {
         backdropImagePath = "image_url",
         posterImagePath = "image_url",
         releaseDate = "2023-11-22",
-        budget = 165000000F,
-        revenue = 220597098F,
-
-    )
+        budget = "\$165,000,000.00",
+        revenue = "\$220,597,104.00",
+        )
 }

@@ -6,6 +6,6 @@ data class Details(
     val backdropImagePath: String,
     val posterImagePath: String,
     val releaseDate: String,
-    val budget: Float,
-    val revenue: Float,
+    val budget: String,
+    val revenue: String,
 )

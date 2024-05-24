@@ -13,13 +13,13 @@ const val DETAILS_ROUTE = "$DETAILS_ROUTE_PREFIX/{$MOVIE_ID}"
 
 fun NavController.navigateToDetails(movieId: Long) = navigate("$DETAILS_ROUTE_PREFIX/$movieId")
 
-fun NavGraphBuilder.detailsScreen() {
+fun NavGraphBuilder.detailsScreen(onTapBack: () -> Unit) {
     composable(
         route = DETAILS_ROUTE,
         arguments = listOf(
             navArgument(MOVIE_ID) { type = NavType.LongType },
         ),
     ) {
-        DetailsScreen()
+        DetailsScreen(onTapBack = onTapBack)
     }
 }

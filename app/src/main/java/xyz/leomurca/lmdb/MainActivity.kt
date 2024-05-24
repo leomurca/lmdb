@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "home") {
                     homeScreen { movieId -> navController.navigateToDetails(movieId) }
-                    detailsScreen()
+                    detailsScreen { navController.popBackStack() }
                 }
             }
         }

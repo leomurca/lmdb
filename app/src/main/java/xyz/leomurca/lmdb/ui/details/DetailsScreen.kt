@@ -10,17 +10,23 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonColors
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
@@ -37,7 +43,7 @@ import coil.compose.AsyncImage
 import xyz.leomurca.lmdb.ui.theme.gradientBlackToTransparent
 
 @Composable
-fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel()) {
+fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel(), onTapBack: () -> Unit) {
     val state = viewModel.uiState.collectAsState()
     when (val value = state.value) {
         is DetailsViewModel.UiState.Loaded -> {
@@ -80,6 +86,17 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel()) {
                                     )
                                 },
                         )
+
+                        IconButton(
+                            onClick = { onTapBack.invoke() },
+                            modifier = Modifier.size(50.dp).padding(top = 15.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                contentDescription = "Arrow Back",
+                                tint = Color.Black
+                            )
+                        }
 
                         Row(Modifier.offset(10.dp, 170.dp)) {
                             AsyncImage(

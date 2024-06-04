@@ -1,6 +1,7 @@
 package xyz.leomurca.lmdb.data.repository.fake
 
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -23,6 +24,7 @@ class FakeMovieRepository @Inject constructor(
     private val numberFormatter: NumberFormatter,
 ) : MovieRepository {
     override fun popularMovies(): Flow<List<Movie>> = flow {
+        delay(2000L)
         emit(
             dataSource.popularMovies().results.map {
                 Movie(
@@ -38,6 +40,7 @@ class FakeMovieRepository @Inject constructor(
 
     override fun details(id: Long): Flow<Details> = flow {
         val details = dataSource.details(id)
+        delay(2000L)
         emit(
             Details(
                 title = details.originalTitle,

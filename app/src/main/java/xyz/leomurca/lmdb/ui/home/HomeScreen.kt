@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
@@ -33,23 +34,22 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), onTapMovie: (movieId:
     val state = viewModel.uiState.collectAsState()
     when (val value = state.value) {
         is HomeViewModel.UiState.Loaded -> {
-            Column(
+            LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
-                    .verticalScroll(rememberScrollState()),
             ) {
-                value.movies.forEach {
+                items(value.movies) {movie ->
                     ListItem(
                         headlineContent = {
                             Text(
-                                text = it.title,
+                                text = movie.title,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = TextUnit(20F, TextUnitType.Sp),
                             )
                         },
                         supportingContent = {
                             Text(
-                                text = it.overview,
+                                text = movie.overview,
                                 maxLines = 5,
                                 overflow = TextOverflow.Ellipsis,
                                 fontSize = TextUnit(12F, TextUnitType.Sp),
@@ -57,13 +57,13 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), onTapMovie: (movieId:
                         },
                         leadingContent = {
                             AsyncImage(
-                                model = it.posterImagePath,
-                                contentDescription = it.title,
+                                model = movie.posterImagePath,
+                                contentDescription = movie.title,
                                 modifier = Modifier.height(200.dp),
                             )
                         },
                         modifier = Modifier.clickable {
-                            onTapMovie.invoke(it.id)
+                            onTapMovie.invoke(movie.id)
                         },
                     )
                     HorizontalDivider()

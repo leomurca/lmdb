@@ -7,6 +7,9 @@
 local.properties
 /local.properties
 
+keys.properties
+/keys.properties
+
 # Log/OS Files
 *.log
 

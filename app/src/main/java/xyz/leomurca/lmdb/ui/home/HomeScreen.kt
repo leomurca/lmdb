@@ -34,40 +34,45 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel(), onTapMovie: (movieId:
     val state = viewModel.uiState.collectAsState()
     when (val value = state.value) {
         is HomeViewModel.UiState.Loaded -> {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-            ) {
-                items(value.movies) {movie ->
-                    ListItem(
-                        headlineContent = {
-                            Text(
-                                text = movie.title,
-                                fontWeight = FontWeight.Bold,
-                                fontSize = TextUnit(20F, TextUnitType.Sp),
+            when (value) {
+                is HomeViewModel.UiState.Loaded.Success ->
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxSize()
+                    ) {
+                        items(value.movies) { movie ->
+                            ListItem(
+                                headlineContent = {
+                                    Text(
+                                        text = movie.title,
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = TextUnit(20F, TextUnitType.Sp),
+                                    )
+                                },
+                                supportingContent = {
+                                    Text(
+                                        text = movie.overview,
+                                        maxLines = 5,
+                                        overflow = TextOverflow.Ellipsis,
+                                        fontSize = TextUnit(12F, TextUnitType.Sp),
+                                    )
+                                },
+                                leadingContent = {
+                                    AsyncImage(
+                                        model = movie.posterImagePath,
+                                        contentDescription = movie.title,
+                                        modifier = Modifier.height(200.dp),
+                                    )
+                                },
+                                modifier = Modifier.clickable {
+                                    onTapMovie.invoke(movie.id)
+                                },
                             )
-                        },
-                        supportingContent = {
-                            Text(
-                                text = movie.overview,
-                                maxLines = 5,
-                                overflow = TextOverflow.Ellipsis,
-                                fontSize = TextUnit(12F, TextUnitType.Sp),
-                            )
-                        },
-                        leadingContent = {
-                            AsyncImage(
-                                model = movie.posterImagePath,
-                                contentDescription = movie.title,
-                                modifier = Modifier.height(200.dp),
-                            )
-                        },
-                        modifier = Modifier.clickable {
-                            onTapMovie.invoke(movie.id)
-                        },
-                    )
-                    HorizontalDivider()
-                }
+                            HorizontalDivider()
+                        }
+                    }
+
+                is HomeViewModel.UiState.Loaded.Error -> Text(text = value.message)
             }
         }
 

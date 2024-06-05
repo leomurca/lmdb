@@ -28,6 +28,7 @@ internal object NetworkModule {
     @Singleton
     fun providesNetworkJson(): Json = Json {
         ignoreUnknownKeys = true
+        isLenient = true
     }
 
     @Provides
@@ -52,22 +53,18 @@ internal object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideJsonConverterFactory(headerInterceptor: HeaderInterceptor): Converter.Factory {
-        val contentType = "application/json".toMediaType()
-        val json = Json {
-            ignoreUnknownKeys = true
-        }
-
-        return json.asConverterFactory(contentType)
+    fun provideNetworkDataSource(apiService: ApiService, json: Json): NetworkDataSource {
+        return RemoteNetworkDataSource(apiService, json)
     }
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient, jsonConverterFactory: Converter.Factory): Retrofit {
+    fun provideRetrofit(okHttpClient: OkHttpClient, json: Json): Retrofit {
+        val contentType = "application/json".toMediaType()
         return Retrofit.Builder()
             .baseUrl(BuildConfig.API_BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(jsonConverterFactory)
+            .addConverterFactory(json.asConverterFactory(contentType))
             .build()
     }
 
@@ -75,11 +72,5 @@ internal object NetworkModule {
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
-    }
-
-    @Provides
-    @Singleton
-    fun provideNetworkDataSource(apiService: ApiService): NetworkDataSource {
-        return RemoteNetworkDataSource(apiService)
     }
 }

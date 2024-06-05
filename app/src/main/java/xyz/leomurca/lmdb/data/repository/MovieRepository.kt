@@ -5,7 +5,7 @@ import xyz.leomurca.lmdb.data.model.Details
 import xyz.leomurca.lmdb.data.model.Movie
 
 interface MovieRepository {
-    fun popularMovies(): Flow<List<Movie>>
+    fun popularMovies(): Flow<MovieResult<List<Movie>>>
 
-    fun details(id: Long): Flow<Details>
+    fun details(id: Long): Flow<MovieResult<Details>>
 }

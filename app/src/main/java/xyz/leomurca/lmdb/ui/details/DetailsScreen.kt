@@ -41,110 +41,117 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel(), onTapBack: () -
     val state = viewModel.uiState.collectAsState()
     when (val value = state.value) {
         is DetailsViewModel.UiState.Loaded -> {
-            Scaffold(
-                floatingActionButton = {
-                    ExtendedFloatingActionButton(
-                        text = { Text(text = "Play trailer", color = Color.White) },
-                        icon = {
-                            Icon(
-                                imageVector = Icons.Rounded.PlayArrow,
-                                contentDescription = "Play trailer",
-                                tint = Color.White,
-                            )
-                        },
-                        onClick = { },
-                        containerColor = Color.Black
-                    )
-                }
-            ) { paddingValues ->
-                Column(Modifier.padding(paddingValues)) {
-                    Box(
-                        Modifier
-                            .fillMaxWidth()
-                            .height(350.dp),
-                    ) {
-                        AsyncImage(
-                            model = value.details.backdropImagePath,
-                            contentDescription = value.details.title,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
-                                .drawWithContent {
-                                    drawContent()
-                                    drawRect(
-                                        brush = Brush.verticalGradient(gradientBlackToTransparent),
-                                        blendMode = BlendMode.DstIn,
+            when (value) {
+                is DetailsViewModel.UiState.Loaded.Success ->
+                    Scaffold(
+                        floatingActionButton = {
+                            ExtendedFloatingActionButton(
+                                text = { Text(text = "Play trailer", color = Color.White) },
+                                icon = {
+                                    Icon(
+                                        imageVector = Icons.Rounded.PlayArrow,
+                                        contentDescription = "Play trailer",
+                                        tint = Color.White,
                                     )
                                 },
-                        )
-
-                        IconButton(
-                            onClick = { onTapBack.invoke() },
-                            modifier = Modifier.size(50.dp).padding(top = 15.dp)
-                        ) {
-                            Icon(
-                                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                contentDescription = "Arrow Back",
-                                tint = Color.Black
+                                onClick = { },
+                                containerColor = Color.Black
                             )
                         }
+                    ) { paddingValues ->
+                        Column(Modifier.padding(paddingValues)) {
+                            Box(
+                                Modifier
+                                    .fillMaxWidth()
+                                    .height(350.dp),
+                            ) {
+                                AsyncImage(
+                                    model = value.details.backdropImagePath,
+                                    contentDescription = value.details.title,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
+                                        .drawWithContent {
+                                            drawContent()
+                                            drawRect(
+                                                brush = Brush.verticalGradient(gradientBlackToTransparent),
+                                                blendMode = BlendMode.DstIn,
+                                            )
+                                        },
+                                )
 
-                        Row(Modifier.offset(10.dp, 170.dp)) {
-                            AsyncImage(
-                                model = value.details.posterImagePath,
-                                contentDescription = value.details.title,
-                                modifier = Modifier
-                                    .height(150.dp)
-                                    .border(BorderStroke(2.dp, Color.Black)),
-                            )
-                            Column(modifier = Modifier.padding(vertical = 30.dp, horizontal = 10.dp)) {
+                                IconButton(
+                                    onClick = { onTapBack.invoke() },
+                                    modifier = Modifier
+                                        .size(50.dp)
+                                        .padding(top = 15.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                        contentDescription = "Arrow Back",
+                                        tint = Color.Black
+                                    )
+                                }
+
+                                Row(Modifier.offset(10.dp, 170.dp)) {
+                                    AsyncImage(
+                                        model = value.details.posterImagePath,
+                                        contentDescription = value.details.title,
+                                        modifier = Modifier
+                                            .height(150.dp)
+                                            .border(BorderStroke(2.dp, Color.Black)),
+                                    )
+                                    Column(modifier = Modifier.padding(vertical = 30.dp, horizontal = 10.dp)) {
+                                        Text(
+                                            text = value.details.title,
+                                            maxLines = 2,
+                                            overflow = TextOverflow.Ellipsis,
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontSize = TextUnit(20F, TextUnitType.Sp),
+                                        )
+                                        Text(
+                                            text = value.details.releaseDate,
+                                            fontSize = TextUnit(12F, TextUnitType.Sp),
+                                        )
+                                    }
+                                }
+                            }
+                            Column(Modifier.padding(horizontal = 10.dp)) {
                                 Text(
-                                    text = value.details.title,
-                                    maxLines = 2,
-                                    overflow = TextOverflow.Ellipsis,
+                                    text = "Overview",
                                     fontWeight = FontWeight.SemiBold,
-                                    fontSize = TextUnit(20F, TextUnitType.Sp),
+                                    fontSize = TextUnit(16F, TextUnitType.Sp),
                                 )
                                 Text(
-                                    text = value.details.releaseDate,
+                                    text = value.details.overview,
+                                    fontSize = TextUnit(12F, TextUnitType.Sp),
+                                )
+                                Text(
+                                    text = "Budget",
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = TextUnit(16F, TextUnitType.Sp),
+                                    modifier = Modifier.padding(top = 10.dp)
+                                )
+                                Text(
+                                    text = value.details.budget,
+                                    fontSize = TextUnit(12F, TextUnitType.Sp),
+                                )
+
+                                Text(
+                                    text = "Revenue",
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = TextUnit(16F, TextUnitType.Sp),
+                                    modifier = Modifier.padding(top = 10.dp)
+                                )
+                                Text(
+                                    text = value.details.revenue,
                                     fontSize = TextUnit(12F, TextUnitType.Sp),
                                 )
                             }
                         }
                     }
-                    Column(Modifier.padding(horizontal = 10.dp)) {
-                        Text(
-                            text = "Overview",
-                            fontWeight = FontWeight.SemiBold,
-                            fontSize = TextUnit(16F, TextUnitType.Sp),
-                        )
-                        Text(
-                            text = value.details.overview,
-                            fontSize = TextUnit(12F, TextUnitType.Sp),
-                        )
-                        Text(
-                            text = "Budget",
-                            fontWeight = FontWeight.SemiBold,
-                            fontSize = TextUnit(16F, TextUnitType.Sp),
-                            modifier = Modifier.padding(top = 10.dp)
-                        )
-                        Text(
-                            text = value.details.budget,
-                            fontSize = TextUnit(12F, TextUnitType.Sp),
-                        )
 
-                        Text(
-                            text = "Revenue",
-                            fontWeight = FontWeight.SemiBold,
-                            fontSize = TextUnit(16F, TextUnitType.Sp),
-                            modifier = Modifier.padding(top = 10.dp)
-                        )
-                        Text(
-                            text = value.details.revenue,
-                            fontSize = TextUnit(12F, TextUnitType.Sp),
-                        )
-                    }
-                }
+                is DetailsViewModel.UiState.Loaded.Error -> Text(text = value.message)
             }
         }
 

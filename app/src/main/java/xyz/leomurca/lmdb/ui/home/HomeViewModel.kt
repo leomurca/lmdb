@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import xyz.leomurca.lmdb.data.model.Movie
 import xyz.leomurca.lmdb.data.repository.MovieRepository
+import xyz.leomurca.lmdb.data.repository.MovieResult
 import javax.inject.Inject
 
 @HiltViewModel
@@ -18,7 +19,10 @@ class HomeViewModel @Inject constructor(
 
     val uiState: StateFlow<UiState> =
         movieRepository.popularMovies().map {
-            UiState.Loaded(it)
+            when (it) {
+                is MovieResult.Success -> UiState.Loaded.Success(it.data)
+                is MovieResult.Error -> UiState.Loaded.Error(it.message)
+            }
         }.stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),
@@ -28,6 +32,9 @@ class HomeViewModel @Inject constructor(
     sealed interface UiState {
         data object Loading : UiState
 
-        data class Loaded(val movies: List<Movie>) : UiState
+        sealed class Loaded : UiState {
+            data class Success(val movies: List<Movie>) : Loaded()
+            data class Error(val message: String) : Loaded()
+        }
     }
 }

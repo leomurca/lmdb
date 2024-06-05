@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     kotlin("kapt")
     alias(libs.plugins.android.application)
@@ -22,7 +24,10 @@ android {
             useSupportLibrary = true
         }
 
+
+        buildConfigField("String", "API_KEY", "\"${apiKey()}\"")
         buildConfigField("String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p\"")
+        buildConfigField("String", "API_BASE_URL", "\"https://api.themoviedb.org/3/\"")
     }
 
     buildTypes {
@@ -73,6 +78,8 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.retrofit.retrofit2.kotlinx.serialization.converter)
     kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit)
@@ -91,3 +98,15 @@ dependencies {
 kapt {
     correctErrorTypes = true
 }
+
+fun apiKey(): String {
+    val keystoreFile = project.rootProject.file("keys.properties")
+    val properties = Properties().apply {
+        load(keystoreFile.inputStream())
+    }
+
+    return properties.getProperty("API_KEY")
+        ?: throw MissingApiKeyException("API key not found in ${keystoreFile.name} file.")
+}
+
+private class MissingApiKeyException(message: String) : RuntimeException(message)

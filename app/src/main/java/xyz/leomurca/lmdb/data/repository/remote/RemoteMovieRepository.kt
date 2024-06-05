@@ -1,7 +1,6 @@
-package xyz.leomurca.lmdb.data.repository.fake
+package xyz.leomurca.lmdb.data.repository.remote
 
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
@@ -9,22 +8,20 @@ import xyz.leomurca.lmdb.BuildConfig
 import xyz.leomurca.lmdb.data.model.Details
 import xyz.leomurca.lmdb.data.model.Movie
 import xyz.leomurca.lmdb.data.repository.MovieRepository
-import xyz.leomurca.lmdb.di.AppDispatchers.IO
+import xyz.leomurca.lmdb.di.AppDispatchers
 import xyz.leomurca.lmdb.di.Dispatcher
-import xyz.leomurca.lmdb.network.fake.FakeNetworkDataSource
+import xyz.leomurca.lmdb.network.NetworkDataSource
 import xyz.leomurca.lmdb.utils.DateFormatter
 import xyz.leomurca.lmdb.utils.DatePattern
 import xyz.leomurca.lmdb.utils.NumberFormatter
-import javax.inject.Inject
 
-class FakeMovieRepository @Inject constructor(
-    @Dispatcher(IO) private val ioDispatcher: CoroutineDispatcher,
-    private val dataSource: FakeNetworkDataSource,
+class RemoteMovieRepository(
+    @Dispatcher(AppDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
+    private val dataSource: NetworkDataSource,
     private val dateFormatter: DateFormatter,
     private val numberFormatter: NumberFormatter,
 ) : MovieRepository {
     override fun popularMovies(): Flow<List<Movie>> = flow {
-        delay(2000L)
         emit(
             dataSource.popularMovies().results.map {
                 Movie(
@@ -32,7 +29,7 @@ class FakeMovieRepository @Inject constructor(
                     title = it.title,
                     overview = it.overview,
                     originalLanguage = it.originalLanguage,
-                    posterImagePath = "${BuildConfig.IMAGE_BASE_URL}$POSTER_IMAGE_DIMENSIONS${it.posterPath}",
+                    posterImagePath = "${BuildConfig.IMAGE_BASE_URL}${POSTER_IMAGE_DIMENSIONS}${it.posterPath}",
                 )
             },
         )
@@ -40,13 +37,12 @@ class FakeMovieRepository @Inject constructor(
 
     override fun details(id: Long): Flow<Details> = flow {
         val details = dataSource.details(id)
-        delay(2000L)
         emit(
             Details(
                 title = details.originalTitle,
                 overview = details.overview,
-                backdropImagePath = "${BuildConfig.IMAGE_BASE_URL}$BACKDROP_IMAGE_DIMENSIONS${details.backdropImagePath}",
-                posterImagePath = "${BuildConfig.IMAGE_BASE_URL}$POSTER_IMAGE_DIMENSIONS${details.posterImagePath}",
+                backdropImagePath = "${BuildConfig.IMAGE_BASE_URL}${BACKDROP_IMAGE_DIMENSIONS}${details.backdropImagePath}",
+                posterImagePath = "${BuildConfig.IMAGE_BASE_URL}${POSTER_IMAGE_DIMENSIONS}${details.posterImagePath}",
                 releaseDate = dateFormatter.dateStringToPattern(details.releaseDate, DatePattern.yyyy),
                 budget = numberFormatter.usdCurrency(details.budget),
                 revenue = numberFormatter.usdCurrency(details.revenue),

@@ -1,14 +1,10 @@
 package xyz.leomurca.lmdb.network.remote
 
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import retrofit2.HttpException
-import retrofit2.http.HTTP
 import xyz.leomurca.lmdb.network.HttpStatus
 import xyz.leomurca.lmdb.network.NetworkDataSource
 import xyz.leomurca.lmdb.network.NetworkResult
 import xyz.leomurca.lmdb.network.model.NetworkDetails
-import xyz.leomurca.lmdb.network.model.NetworkDetailsResponse
 import xyz.leomurca.lmdb.network.model.NetworkError
 import xyz.leomurca.lmdb.network.model.NetworkMovieResponse
 import javax.inject.Inject
@@ -23,14 +19,13 @@ class RemoteNetworkDataSource @Inject constructor(
             val response = apiService.popularMovies()
 
             if (response.isSuccessful) {
-                return NetworkResult.Success(response.body()
-                    ?: throw Exception("Empty response body"))
+                return NetworkResult.Success(response.body() ?: throw Exception("Empty response body"))
             } else {
                 val errorBody = response.errorBody()?.string() ?: ""
                 val networkError = json.decodeFromString<NetworkError>(errorBody)
                 when (response.code()) {
                     HttpStatus.UNAUTHORIZED.code -> NetworkResult.Error(NetworkResult.NetworkException.UnauthorizedException(networkError.message))
-                    else -> NetworkResult.Error(NetworkResult.NetworkException.UnknownException("I do not know"))
+                    else -> NetworkResult.Error(NetworkResult.NetworkException.UnknownException("Unexpected error!"))
                 }
             }
         } catch (e: Exception) {
@@ -43,14 +38,13 @@ class RemoteNetworkDataSource @Inject constructor(
             val response = apiService.detailsMovie(id)
 
             if (response.isSuccessful) {
-                return NetworkResult.Success(response.body()
-                    ?: throw Exception("Empty response body"))
+                return NetworkResult.Success(response.body() ?: throw Exception("Empty response body"))
             } else {
                 val errorBody = response.errorBody()?.string() ?: ""
                 val networkError = json.decodeFromString<NetworkError>(errorBody)
                 when (response.code()) {
                     HttpStatus.UNAUTHORIZED.code -> NetworkResult.Error(NetworkResult.NetworkException.UnauthorizedException(networkError.message))
-                    else -> NetworkResult.Error(NetworkResult.NetworkException.UnknownException("I do not know"))
+                    else -> NetworkResult.Error(NetworkResult.NetworkException.UnknownException("Unexpected error!"))
                 }
             }
         } catch (e: Exception) {

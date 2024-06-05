@@ -4,7 +4,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import xyz.leomurca.lmdb.network.model.NetworkDetails
-import xyz.leomurca.lmdb.network.model.NetworkDetailsResponse
 import xyz.leomurca.lmdb.network.model.NetworkMovieResponse
 
 interface ApiService {

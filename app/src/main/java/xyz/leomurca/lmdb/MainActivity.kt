@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import xyz.leomurca.lmdb.navigation.HOME_ROUTE
 import xyz.leomurca.lmdb.navigation.detailsScreen
 import xyz.leomurca.lmdb.navigation.homeScreen
 import xyz.leomurca.lmdb.navigation.navigateToDetails
@@ -18,7 +19,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             LMDBTheme {
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "home") {
+                NavHost(navController = navController, startDestination = HOME_ROUTE) {
                     homeScreen { movieId -> navController.navigateToDetails(movieId) }
                     detailsScreen { navController.popBackStack() }
                 }

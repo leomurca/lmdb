@@ -25,7 +25,6 @@ class DetailsViewModel @Inject constructor(
                 is MovieResult.Success -> UiState.Loaded.Success(it.data)
                 is MovieResult.Error -> UiState.Loaded.Error(it.message)
             }
-
         }.stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),

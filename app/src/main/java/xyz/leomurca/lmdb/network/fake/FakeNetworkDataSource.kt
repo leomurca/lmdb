@@ -23,6 +23,8 @@ class FakeNetworkDataSource @Inject constructor(
 
     override suspend fun details(id: Long): NetworkResult<NetworkDetails> = TODO()
 
+    override suspend fun searchMovie(query: String): NetworkResult<NetworkMovieResponse> = TODO()
+
     companion object {
         private const val POPULAR_MOVIES_ASSET = "popular-movies.json"
         private const val DETAILS_ASSET = "movie-details.json"

@@ -32,7 +32,7 @@ class RemoteMovieRepository(
                             id = it.id,
                             title = it.title,
                             overview = it.overview,
-                            originalLanguage = it.originalLanguage,
+                            originalLanguage = originalLanguageOrBlank(it.originalLanguage),
                             posterImagePath = "${BuildConfig.IMAGE_BASE_URL}${POSTER_IMAGE_DIMENSIONS}${it.posterPath}",
                         )
                     }
@@ -52,8 +52,8 @@ class RemoteMovieRepository(
                     Details(
                         title = result.data.originalTitle,
                         overview = result.data.overview,
-                        backdropImagePath = "${BuildConfig.IMAGE_BASE_URL}${BACKDROP_IMAGE_DIMENSIONS}${result.data.backdropImagePath}",
-                        posterImagePath = "${BuildConfig.IMAGE_BASE_URL}${POSTER_IMAGE_DIMENSIONS}${result.data.posterImagePath}",
+                        backdropImagePath = backdropImagePathOrBlank(result.data.backdropImagePath),
+                        posterImagePath = posterImageUrlOrBlank(result.data.posterImagePath),
                         releaseDate = dateFormatter.dateStringToPattern(result.data.releaseDate, DatePattern.yyyy),
                         budget = numberFormatter.usdCurrency(result.data.budget),
                         revenue = numberFormatter.usdCurrency(result.data.revenue),
@@ -67,8 +67,45 @@ class RemoteMovieRepository(
         }
     }.flowOn(ioDispatcher)
 
+    override fun searchMovie(query: String): Flow<MovieResult<List<Movie>>> = flow {
+        when (val result = dataSource.searchMovie(query)) {
+            is NetworkResult.Success -> emit(
+                MovieResult.Success(
+                    result.data.results.map {
+                        Movie(
+                            id = it.id,
+                            title = it.title,
+                            overview = it.overview,
+                            originalLanguage = originalLanguageOrBlank(it.originalLanguage),
+                            posterImagePath = posterImageUrlOrBlank(it.posterPath)
+                        )
+                    }
+                )
+            )
+
+            is NetworkResult.Error -> emit(
+                MovieResult.Error(result.exception.message)
+            )
+        }
+    }.flowOn(ioDispatcher)
+
+
+    private fun posterImageUrlOrBlank(path: String?): String {
+        return if (path != null) "${BuildConfig.IMAGE_BASE_URL}${POSTER_IMAGE_DIMENSIONS}$path" else EMPTY_STRING
+    }
+
+    private fun backdropImagePathOrBlank(path: String?): String {
+       return if (path != null) "${BuildConfig.IMAGE_BASE_URL}${BACKDROP_IMAGE_DIMENSIONS}${path}" else EMPTY_STRING
+    }
+
+    private fun originalLanguageOrBlank(language: String?): String {
+        return language ?: ""
+    }
+
+
     companion object {
         private const val POSTER_IMAGE_DIMENSIONS = "/w600_and_h900_bestv2"
         private const val BACKDROP_IMAGE_DIMENSIONS = "/w1066_and_h600_bestv2"
+        private const val EMPTY_STRING = ""
     }
 }

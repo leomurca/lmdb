@@ -10,7 +10,7 @@ data class NetworkDetails(
     val revenue: Float,
     val overview: String,
     @SerialName("original_title") val originalTitle: String,
-    @SerialName("backdrop_path") val backdropImagePath: String,
-    @SerialName("poster_path") val posterImagePath: String,
+    @SerialName("backdrop_path") val backdropImagePath: String?,
+    @SerialName("poster_path") val posterImagePath: String?,
     @SerialName("release_date") val releaseDate: String,
 )

@@ -1,15 +1,20 @@
 package xyz.leomurca.lmdb.ui.details
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.rounded.PlayArrow
@@ -20,6 +25,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.graphics.BlendMode
@@ -28,6 +34,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
@@ -59,26 +66,45 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel(), onTapBack: () -
                             )
                         }
                     ) { paddingValues ->
-                        Column(Modifier.padding(paddingValues)) {
+                        Column(Modifier
+                            .padding(paddingValues)
+                            .verticalScroll(rememberScrollState())) {
                             Box(
                                 Modifier
                                     .fillMaxWidth()
                                     .height(350.dp),
                             ) {
-                                AsyncImage(
-                                    model = value.details.backdropImagePath,
-                                    contentDescription = value.details.title,
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
-                                        .drawWithContent {
-                                            drawContent()
-                                            drawRect(
-                                                brush = Brush.verticalGradient(gradientBlackToTransparent),
-                                                blendMode = BlendMode.DstIn,
-                                            )
-                                        },
-                                )
+                                if (value.details.backdropImagePath.isNotBlank()) {
+                                    AsyncImage(
+                                        model = value.details.backdropImagePath,
+                                        contentDescription = value.details.title,
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
+                                            .drawWithContent {
+                                                drawContent()
+                                                drawRect(
+                                                    brush = Brush.verticalGradient(gradientBlackToTransparent),
+                                                    blendMode = BlendMode.DstIn,
+                                                )
+                                            },
+                                    )
+                                } else {
+                                    Box(
+                                        modifier = Modifier
+                                            .background(Color.LightGray)
+                                            .fillMaxWidth()
+                                            .height(250.dp)
+                                            .graphicsLayer(compositingStrategy = CompositingStrategy.Offscreen)
+                                            .drawWithContent {
+                                                drawContent()
+                                                drawRect(
+                                                    brush = Brush.verticalGradient(gradientBlackToTransparent),
+                                                    blendMode = BlendMode.DstIn,
+                                                )
+                                            },
+                                    )
+                                }
 
                                 IconButton(
                                     onClick = { onTapBack.invoke() },
@@ -94,14 +120,21 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel(), onTapBack: () -
                                 }
 
                                 Row(Modifier.offset(10.dp, 170.dp)) {
-                                    AsyncImage(
-                                        model = value.details.posterImagePath,
-                                        contentDescription = value.details.title,
-                                        modifier = Modifier
-                                            .height(150.dp)
-                                            .border(BorderStroke(2.dp, Color.Black)),
-                                    )
-                                    Column(modifier = Modifier.padding(vertical = 30.dp, horizontal = 10.dp)) {
+                                    if (value.details.posterImagePath.isNotBlank()) {
+                                        AsyncImage(
+                                            model = value.details.posterImagePath,
+                                            contentDescription = value.details.title,
+                                            modifier = Modifier
+                                                .height(150.dp)
+                                                .border(BorderStroke(2.dp, Color.Black)),
+                                        )
+                                    } else {
+                                        PosterImageFallback()
+                                    }
+                                    Column(
+                                        Modifier
+                                            .padding(vertical = 30.dp, horizontal = 10.dp)
+                                    ) {
                                         Text(
                                             text = value.details.title,
                                             maxLines = 2,
@@ -116,11 +149,17 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel(), onTapBack: () -
                                     }
                                 }
                             }
-                            Column(Modifier.padding(horizontal = 10.dp)) {
+                            Column(
+                                Modifier
+                                    .padding(horizontal = 10.dp)
+                                    .fillMaxWidth()
+                                    .fillMaxHeight()
+                            ) {
                                 Text(
                                     text = "Overview",
                                     fontWeight = FontWeight.SemiBold,
                                     fontSize = TextUnit(16F, TextUnitType.Sp),
+                                    modifier = Modifier.padding(top = 10.dp)
                                 )
                                 Text(
                                     text = value.details.overview,
@@ -158,5 +197,18 @@ fun DetailsScreen(viewModel: DetailsViewModel = hiltViewModel(), onTapBack: () -
         is DetailsViewModel.UiState.Loading -> {
             Text(text = "Loading...")
         }
+    }
+}
+
+@Composable
+private fun PosterImageFallback() {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .height(150.dp)
+            .width(100.dp)
+            .background(Color.Gray)
+    ) {
+        Text(text = "Image not found", color = Color.White, textAlign = TextAlign.Center)
     }
 }

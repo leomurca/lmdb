@@ -19,7 +19,7 @@ class RemoteNetworkDataSource @Inject constructor(
             val response = apiService.popularMovies()
 
             if (response.isSuccessful) {
-                return NetworkResult.Success(response.body() ?: throw Exception("Empty response body"))
+                NetworkResult.Success(response.body() ?: throw Exception("Empty response body"))
             } else {
                 val errorBody = response.errorBody()?.string() ?: ""
                 val networkError = json.decodeFromString<NetworkError>(errorBody)
@@ -38,7 +38,26 @@ class RemoteNetworkDataSource @Inject constructor(
             val response = apiService.detailsMovie(id)
 
             if (response.isSuccessful) {
-                return NetworkResult.Success(response.body() ?: throw Exception("Empty response body"))
+                NetworkResult.Success(response.body() ?: throw Exception("Empty response body"))
+            } else {
+                val errorBody = response.errorBody()?.string() ?: ""
+                val networkError = json.decodeFromString<NetworkError>(errorBody)
+                when (response.code()) {
+                    HttpStatus.UNAUTHORIZED.code -> NetworkResult.Error(NetworkResult.NetworkException.UnauthorizedException(networkError.message))
+                    else -> NetworkResult.Error(NetworkResult.NetworkException.UnknownException("Unexpected error!"))
+                }
+            }
+        } catch (e: Exception) {
+            NetworkResult.Error(NetworkResult.NetworkException.UnknownException(e.message.toString(), e))
+        }
+    }
+
+    override suspend fun searchMovie(query: String): NetworkResult<NetworkMovieResponse> {
+        return try {
+            val response = apiService.searchMovie(query)
+
+            if (response.isSuccessful) {
+                NetworkResult.Success(response.body() ?: throw Exception("Empty response body"))
             } else {
                 val errorBody = response.errorBody()?.string() ?: ""
                 val networkError = json.decodeFromString<NetworkError>(errorBody)

@@ -6,4 +6,5 @@ import xyz.leomurca.lmdb.network.model.NetworkMovieResponse
 interface NetworkDataSource {
     suspend fun popularMovies(): NetworkResult<NetworkMovieResponse>
     suspend fun details(id: Long): NetworkResult<NetworkDetails>
+    suspend fun searchMovie(query: String): NetworkResult<NetworkMovieResponse>
 }

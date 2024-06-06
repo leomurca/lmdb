@@ -32,6 +32,10 @@ class FakeMovieRepository @Inject constructor(
         TODO("Not yet implemented")
     }
 
+    override fun searchMovie(query: String): Flow<MovieResult<List<Movie>>> {
+        TODO("Not yet implemented")
+    }
+
     companion object {
         private const val POSTER_IMAGE_DIMENSIONS = "/w600_and_h900_bestv2"
         private const val BACKDROP_IMAGE_DIMENSIONS = "/w1066_and_h600_bestv2"

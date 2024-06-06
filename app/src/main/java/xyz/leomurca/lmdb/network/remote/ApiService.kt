@@ -3,6 +3,7 @@ package xyz.leomurca.lmdb.network.remote
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 import xyz.leomurca.lmdb.network.model.NetworkDetails
 import xyz.leomurca.lmdb.network.model.NetworkMovieResponse
 
@@ -12,4 +13,7 @@ interface ApiService {
 
     @GET("movie/{id}?language=en-US")
     suspend fun detailsMovie(@Path("id") id: Long): Response<NetworkDetails>
+
+    @GET("search/movie")
+    suspend fun searchMovie(@Query("query") query: String): Response<NetworkMovieResponse>
 }

@@ -8,4 +8,7 @@ interface MovieRepository {
     fun popularMovies(): Flow<MovieResult<List<Movie>>>
 
     fun details(id: Long): Flow<MovieResult<Details>>
+
+    fun searchMovie(query: String): Flow<MovieResult<List<Movie>>>
+
 }

@@ -3,10 +3,11 @@ package xyz.leomurca.lmdb.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import xyz.leomurca.lmdb.data.model.Movie
 import xyz.leomurca.lmdb.data.repository.MovieRepository
 import xyz.leomurca.lmdb.data.repository.MovieResult
@@ -14,20 +15,37 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    movieRepository: MovieRepository,
+    private val movieRepository: MovieRepository,
 ) : ViewModel() {
 
-    val uiState: StateFlow<UiState> =
-        movieRepository.popularMovies().map {
-            when (it) {
-                is MovieResult.Success -> UiState.Loaded.Success(it.data)
-                is MovieResult.Error -> UiState.Loaded.Error(it.message)
-            }
-        }.stateIn(
-            scope = viewModelScope,
-            started = SharingStarted.WhileSubscribed(5_000),
-            initialValue = UiState.Loading,
-        )
+    private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
+    val uiState = _uiState.asStateFlow()
+
+    private val _searchText = MutableStateFlow("")
+    val searchText = _searchText.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            _uiState.value = movieRepository.popularMovies().map { result ->
+                when (result) {
+                    is MovieResult.Success -> UiState.Loaded.Success(result.data)
+                    is MovieResult.Error -> UiState.Loaded.Error(result.message)
+                }
+            }.first()
+        }
+    }
+
+    fun onSearchTextChange(query: String) {
+        _searchText.value = query
+        viewModelScope.launch {
+            _uiState.value = movieRepository.searchMovie(_searchText.value).map { result ->
+                when (result) {
+                    is MovieResult.Success -> UiState.Loaded.Success(result.data)
+                    is MovieResult.Error -> UiState.Loaded.Error(result.message)
+                }
+            }.first()
+        }
+    }
 
     sealed interface UiState {
         data object Loading : UiState
